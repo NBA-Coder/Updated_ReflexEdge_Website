@@ -1,0 +1,4492 @@
+
+/* =====================================================
+   SAFEEDGE APARTMENTS
+   APARTMENTS PAGE STYLESHEET
+   Dark Blue + Light Blue
+   Font: Inter
+===================================================== */
+
+
+/* =====================================================
+   BRAND VARIABLES
+===================================================== */
+
+:root {
+    --dark-blue: #071A35;
+    --dark-blue-2: #0B2548;
+
+    --blue: #1687D9;
+    --light-blue: #DDF2FF;
+    --very-light-blue: #F4FAFE;
+
+    --white: #ffffff;
+    --black: #101820;
+
+    --grey: #667085;
+    --light-grey: #E8EEF3;
+
+    --border: #E3EBF2;
+
+    --shadow: 0 20px 50px rgba(7, 26, 53, 0.10);
+
+    --transition: all 0.35s ease;
+}
+
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    color: var(--black);
+    background: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: "Inter", sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container {
+    width: min(1180px, 90%);
+    margin: auto;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background:white;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+
+    transition: var(--transition);
+}
+
+.site-header.scrolled {
+    background: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.nav-container {
+    height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+
+
+
+
+
+/* =========================================================
+   SAFEEDGE APARTMENTS
+   RESPONSIVE HEADER
+========================================================= */
+
+.site-header {
+    width: 100%;
+    height: 76px;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-bottom: 1px solid var(--light-grey);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+
+/* =========================================================
+   HEADER CONTAINER
+========================================================= */
+
+.nav-container {
+    width: min(1200px, 92%);
+    height: 100%;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    text-decoration: none;
+}
+
+.logo img {
+    width: 125px;
+    height: 52px;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   DESKTOP NAVIGATION
+========================================================= */
+
+.desktop-nav {
+    display: flex;
+    align-items: center;
+
+    gap: 32px;
+
+    margin-left: auto;
+}
+
+.desktop-nav a {
+    position: relative;
+
+    padding: 28px 0;
+
+    color: var(--grey);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition: color 0.25s ease;
+}
+
+.desktop-nav a:hover {
+    color: var(--blue);
+}
+
+.desktop-nav a.active {
+    color: var(--dark-blue);
+}
+
+
+/* Active underline */
+
+.desktop-nav a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: 17px;
+
+    height: 2px;
+
+    background: var(--blue);
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   BOOK NOW BUTTON
+========================================================= */
+
+.nav-book-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    flex-shrink: 0;
+
+    padding: 11px 18px;
+
+    background: var(--blue);
+
+    color: var(--white);
+
+    border-radius: 7px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.nav-book-btn:hover {
+    background: var(--dark-blue);
+
+    color: var(--white);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(22, 135, 217, 0.20);
+}
+
+.nav-book-btn i {
+    font-size: 11px;
+
+    transition: transform 0.25s ease;
+}
+
+.nav-book-btn:hover i {
+    transform: translateX(3px);
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.menu-toggle {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-left: auto;
+
+    padding: 0;
+
+    border: 1px solid var(--light-grey);
+
+    border-radius: 8px;
+
+    background: var(--white);
+
+    color: var(--dark-blue);
+
+    cursor: pointer;
+
+    font-size: 19px;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.menu-toggle:hover {
+    background: var(--light-blue);
+
+    border-color: #b9dff5;
+
+    color: var(--blue);
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+.mobile-nav {
+    position: absolute;
+
+    top: 76px;
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 12px 5% 20px;
+
+    background: rgba(255, 255, 255, 0.98);
+
+    border-bottom: 1px solid var(--light-grey);
+
+    box-shadow:
+        0 15px 30px rgba(7, 26, 53, 0.08);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-10px);
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* Open state */
+
+.mobile-nav.open {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+
+    pointer-events: auto;
+}
+
+
+/* Mobile links */
+
+.mobile-nav > a {
+    width: 100%;
+
+    padding: 15px 5px;
+
+    color: var(--dark-blue);
+
+    border-bottom: 1px solid var(--light-grey);
+
+    font-size: 15px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        padding-left 0.2s ease;
+}
+
+.mobile-nav > a:hover {
+    color: var(--blue);
+
+    padding-left: 10px;
+}
+
+
+/* Mobile Book Button */
+
+.mobile-nav .mobile-book-btn {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    margin-top: 15px;
+
+    padding: 13px 18px;
+
+    background: var(--blue);
+
+    color: var(--white);
+
+    border: none;
+
+    border-radius: 7px;
+
+    text-align: center;
+}
+
+.mobile-nav .mobile-book-btn:hover {
+    padding-left: 18px;
+
+    background: var(--dark-blue);
+
+    color: var(--white);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .nav-container {
+        width: 92%;
+    }
+
+    .desktop-nav {
+        gap: 20px;
+    }
+
+    .desktop-nav a {
+        font-size: 13px;
+    }
+
+    .nav-book-btn {
+        padding: 10px 14px;
+
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .site-header {
+        height: 70px;
+    }
+
+    .nav-container {
+        width: 90%;
+    }
+
+
+    /* Hide desktop navigation */
+
+    .desktop-nav,
+    .nav-book-btn {
+        display: none;
+    }
+
+
+    /* Show hamburger */
+
+    .menu-toggle {
+        display: flex;
+    }
+
+
+    /* Mobile navigation position */
+
+    .mobile-nav {
+        top: 70px;
+    }
+
+
+    /* Logo */
+
+    .logo img {
+        width: 115px;
+        height: 48px;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .site-header {
+        height: 66px;
+    }
+
+    .nav-container {
+        width: 92%;
+    }
+
+    .logo img {
+        width: 105px;
+        height: 44px;
+    }
+
+    .menu-toggle {
+        width: 39px;
+        height: 39px;
+
+        font-size: 17px;
+    }
+
+    .mobile-nav {
+        top: 66px;
+
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .mobile-nav > a {
+        padding: 14px 5px;
+
+        font-size: 14px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   RESPONSIVE HEADER
+   ========================================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-bottom: 1px solid #e8edf3;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+
+/* =========================================================
+   HEADER CONTAINER
+   ========================================================= */
+
+.nav-container {
+    width: min(1200px, 92%);
+
+    min-height: 76px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.logo {
+    display: flex;
+
+    align-items: center;
+
+    flex-shrink: 0;
+}
+
+.logo img {
+    display: block;
+
+    width: 80px;
+
+    height: auto;
+}
+
+
+/* =========================================================
+   DESKTOP NAVIGATION
+   ========================================================= */
+
+.desktop-nav {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: clamp(18px, 2.5vw, 32px);
+
+    margin-left: auto;
+}
+
+.desktop-nav a {
+    position: relative;
+
+    color: #071a33;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition: color 0.25s ease;
+}
+
+
+/* Underline */
+
+.desktop-nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+
+    background: #3298e8;
+
+    border-radius: 10px;
+
+    transition: width 0.25s ease;
+}
+
+
+/* Hover */
+
+.desktop-nav a:hover {
+    color: #3298e8;
+}
+
+.desktop-nav a:hover::after {
+    width: 100%;
+}
+
+
+/* Active page */
+
+.desktop-nav a.active {
+    color: #3298e8;
+}
+
+.desktop-nav a.active::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   BOOK NOW BUTTON
+   ========================================================= */
+
+.nav-book-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    flex-shrink: 0;
+
+    padding: 11px 17px;
+
+    border-radius: 5px;
+
+    background: #071a33;
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.nav-book-btn:hover {
+    background: #3298e8;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+.nav-book-btn i {
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+   ========================================================= */
+
+.menu-toggle {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #071a33;
+
+    cursor: pointer;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 20px;
+}
+
+.menu-toggle:hover {
+    color: #3298e8;
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+   ========================================================= */
+
+.mobile-nav {
+    display: none;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+    .nav-container {
+        width: 92%;
+
+        gap: 18px;
+    }
+
+    .logo img {
+        width: 80px;
+    }
+
+    .desktop-nav {
+        gap: 18px;
+    }
+
+    .desktop-nav a {
+        font-size: 11px;
+    }
+
+    .nav-book-btn {
+        padding: 10px 14px;
+
+        font-size: 10px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 750px) {
+
+    /* Header */
+
+    .nav-container {
+        min-height: 68px;
+
+        width: 90%;
+    }
+
+
+    /* Logo */
+
+    .logo img {
+        width: 80px;
+    }
+
+
+    /* Hide desktop navigation */
+
+    .desktop-nav {
+        display: none;
+    }
+
+
+    /* Hide desktop booking button */
+
+    .nav-book-btn {
+        display: none;
+    }
+
+
+    /* Show hamburger */
+
+    .menu-toggle {
+        display: flex;
+    }
+
+
+    /* =====================================================
+       MOBILE NAV
+       ===================================================== */
+
+    .mobile-nav {
+        position: absolute;
+
+        top: 68px;
+        left: 0;
+
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        padding: 8px 6% 20px;
+
+        background: #ffffff;
+
+        border-bottom: 1px solid #e8edf3;
+
+        box-shadow:
+            0 15px 35px rgba(7, 26, 51, 0.08);
+
+        /* Hidden by default */
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        pointer-events: none;
+
+        transform: translateY(-10px);
+
+        transition:
+            opacity 0.25s ease,
+            visibility 0.25s ease,
+            transform 0.25s ease;
+    }
+
+
+    /* Open mobile menu */
+
+    .mobile-nav.active {
+        opacity: 1;
+
+        visibility: visible;
+
+        pointer-events: auto;
+
+        transform: translateY(0);
+    }
+
+
+    /* Mobile links */
+
+    .mobile-nav a {
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        width: 100%;
+
+        padding: 15px 5px;
+
+        border-bottom: 1px solid #edf1f5;
+
+        color: #071a33;
+
+        font-size: 13px;
+
+        font-weight: 600;
+
+        transition:
+            color 0.2s ease,
+            padding-left 0.2s ease;
+    }
+
+    .mobile-nav a:hover {
+        color: #3298e8;
+
+        padding-left: 10px;
+    }
+
+
+    /* Mobile booking button */
+
+    .mobile-nav .mobile-book-btn {
+        justify-content: center;
+
+        gap: 8px;
+
+        margin-top: 13px;
+
+        padding: 13px;
+
+        border: none;
+
+        border-radius: 5px;
+
+        background: #071a33;
+
+        color: #ffffff;
+    }
+
+    .mobile-nav .mobile-book-btn:hover {
+        padding-left: 13px;
+
+        background: #3298e8;
+
+        color: #ffffff;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .nav-container {
+        width: 90%;
+
+        min-height: 64px;
+    }
+
+    .logo img {
+        width: 50px;
+    }
+
+    .menu-toggle {
+        width: 40px;
+        height: 40px;
+
+        font-size: 19px;
+    }
+
+    .mobile-nav {
+        top: 64px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+   APARTMENT VIDEO
+   ========================================= */
+
+.full-apartment-image {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    background: #f3f6f9;
+    border-radius: 12px;
+}
+
+/* Video fills the entire container */
+.full-apartment-image video {
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    cursor: pointer;
+}
+
+/* Slight visual effect when hovering */
+.full-apartment-image:hover video {
+    transform: scale(1.02);
+    transition: transform 0.5s ease;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .full-apartment-image {
+        height: 250px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .full-apartment-image {
+        height: 220px;
+    }
+
+
+}
+
+
+
+
+/* =====================================================
+   APARTMENTS HERO
+===================================================== */
+.apartments-hero {
+    position: relative;
+    min-height: 600px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background-image: url("/Images/pexels-dada-_design-240566386-12277635.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
+
+/* SCROLL */
+
+.scroll-indicator {
+    position: absolute;
+
+    right: 5%;
+    bottom: 40px;
+
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: rgba(255, 255, 255, 0.6);
+
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+
+    writing-mode: vertical-rl;
+}
+
+.scroll-indicator i {
+    color: var(--blue);
+
+    animation: scrollBounce 1.8s infinite;
+}
+
+@keyframes scrollBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
+
+}
+
+
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    position: relative;
+
+    min-height: 90vh;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background: var(--dark-blue);
+}
+
+
+/* VIDEO */
+
+.hero-video {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: 0.90;
+}
+
+
+
+/* HERO CONTENT */
+
+.hero-container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    max-width: 720px;
+    padding-top: 90px;
+
+    animation: heroIn 1.1s ease forwards;
+}
+
+@keyframes heroIn {
+
+    from {
+        opacity: 0;
+        transform: translateX(-45px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+
+/* HERO HEADING */
+
+.hero h1 {
+    color: var(--white);
+
+    font-size: clamp(48px, 6vw, 82px);
+    line-height: 1.02;
+
+    letter-spacing: -3px;
+
+    font-weight: 700;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--light-blue);
+}
+
+.hero h1 strong {
+    display: block;
+    color: var(--blue);
+    font-weight: 800;
+}
+
+
+/* HERO TEXT */
+
+.hero-text {
+    max-width: 580px;
+
+    margin-top: 25px;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+
+/* HERO BUTTONS */
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    margin-top: 35px;
+}
+
+.primary-btn,
+.secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    min-height: 54px;
+
+    padding: 0 25px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: var(--transition);
+}
+
+.primary-btn {
+    color: var(--white);
+    background: var(--blue);
+}
+
+.primary-btn:hover {
+    background: #0d75c1;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(22, 135, 217, 0.30);
+}
+
+.secondary-btn {
+    color: var(--white);
+
+    border: 1px solid rgba(255, 255, 255, 0.28);
+
+    background: rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(10px);
+}
+
+.secondary-btn:hover {
+    background: var(--white);
+    color: var(--dark-blue);
+    transform: translateY(-3px);
+}
+
+
+/* TRUST */
+
+.hero-trust {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    margin-top: 55px;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.trust-item i {
+    color: var(--light-blue);
+}
+
+.trust-line {
+    width: 1px;
+    height: 18px;
+
+    background: rgba(255, 255, 255, 0.25);
+}
+
+
+/* SCROLL */
+
+.scroll-indicator {
+    position: absolute;
+
+    right: 5%;
+    bottom: 40px;
+
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: rgba(255, 255, 255, 0.6);
+
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+
+    writing-mode: vertical-rl;
+}
+
+.scroll-indicator i {
+    color: var(--blue);
+
+    animation: scrollBounce 1.8s infinite;
+}
+
+@keyframes scrollBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
+
+}
+
+
+
+
+
+
+
+
+
+/* Hero content */
+
+.apartments-hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 700px;
+
+    padding-top: 70px;
+
+    animation:
+        apartmentHeroIn 1s ease forwards;
+}
+
+
+@keyframes apartmentHeroIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+
+
+/* =====================================================
+   SAFEEDGE APARTMENTS HERO
+   LIGHT BLUE WAVE DESIGN
+===================================================== */
+
+.apartments-hero {
+    position: relative;
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+    
+
+
+
+
+}
+
+
+
+
+
+/* =====================================================
+   SUBTLE BACKGROUND GRADIENT
+===================================================== */
+
+.apartments-hero::before {
+    content: "";
+
+    position: absolute;
+    top: -250px;
+    right: -150px;
+
+    width: 600px;
+    height: 600px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(22, 135, 217, 0.22) 0%,
+            rgba(22, 135, 217, 0.08) 40%,
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   BOTTOM LIGHT-BLUE WAVE
+===================================================== */
+
+.apartments-hero::after {
+    content: "";
+
+    position: absolute;
+
+    left: -5%;
+    bottom: -180px;
+
+    width: 110%;
+    height: 280px;
+
+    background: #DDF2FF;
+
+    border-radius: 50% 50% 0 0 / 45% 45% 0 0;
+
+    transform: rotate(-2deg);
+
+    z-index: 1;
+}
+
+
+/* =====================================================
+   HERO CONTAINER
+===================================================== */
+
+.apartments-hero .container {
+    position: relative;
+
+    z-index: 3;
+
+    width: min(1180px, 90%);
+}
+
+
+/* =====================================================
+   HERO CONTENT
+===================================================== */
+
+.apartments-hero-content {
+    max-width: 720px;
+
+    padding-top: 65px;
+
+    animation:
+        apartmentHeroIn 1s ease forwards;
+}
+
+
+@keyframes apartmentHeroIn {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   EYEBROW
+===================================================== */
+
+.apartments-hero .hero-eyebrow {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 22px;
+
+    color: #8DD8FF;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+}
+
+
+.apartments-hero .eyebrow-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #1687D9;
+
+    box-shadow:
+        0 0 0 5px rgba(22, 135, 217, 0.15);
+}
+
+
+/* =====================================================
+   MAIN HEADING
+===================================================== */
+
+.apartments-hero h1 {
+    max-width: 800px;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(48px, 6.5vw, 80px);
+
+    line-height: 1;
+
+    letter-spacing: -4px;
+
+    font-weight: 700;
+}
+
+
+.apartments-hero h1 span {
+    display: block;
+
+    color: #8DD8FF;
+}
+
+
+
+
+/* Hero eyebrow */
+
+.apartments-hero .hero-eyebrow {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 22px;
+
+    color: var(--light-blue);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.apartments-hero .eyebrow-dot {
+    width: 8px;
+    height: 8px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: var(--blue);
+
+    box-shadow:
+        0 0 0 6px rgba(22, 135, 217, 0.15);
+}
+
+
+/* Hero heading */
+
+.apartments-hero h1 {
+    color: var(--white);
+
+    font-size:
+        clamp(48px, 6vw, 78px);
+
+    line-height: 1.02;
+
+    letter-spacing: -3px;
+
+    font-weight: 700;
+}
+
+
+.apartments-hero h1 span {
+    display: block;
+
+    color: #8DD8FF;
+}
+
+
+/* Hero paragraph */
+
+.apartments-hero p {
+    max-width: 600px;
+
+    margin-top: 25px;
+
+    color:
+        rgba(255, 255, 255, 0.72);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   INTRO SECTION
+===================================================== */
+
+.apartments-intro {
+    padding:
+        100px 0 40px;
+
+    background: var(--white);
+}
+
+
+.apartments-intro .section-heading {
+    display: grid;
+
+    grid-template-columns:
+        1fr 0.8fr;
+
+    align-items: end;
+
+    gap: 70px;
+
+    margin-bottom: 40px;
+}
+
+
+.apartments-intro .section-label {
+    display: block;
+
+    margin-bottom: 13px;
+
+    color: var(--blue);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.apartments-intro h2 {
+    color: var(--dark-blue);
+
+    font-size:
+        clamp(35px, 4vw, 52px);
+
+    line-height: 1.08;
+
+    letter-spacing: -2px;
+
+    font-weight: 700;
+}
+
+
+.apartments-intro h2 span {
+    color: var(--blue);
+}
+
+
+.intro-text {
+    max-width: 500px;
+
+    color: var(--grey);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+
+/* =====================================================
+   FILTER BUTTONS
+===================================================== */
+
+.apartment-filters {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 35px;
+}
+
+
+.filter-btn {
+    padding:
+        11px 19px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 50px;
+
+    color: var(--grey);
+
+    background: var(--white);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+
+.filter-btn:hover {
+    color: var(--blue);
+
+    border-color:
+        rgba(22, 135, 217, 0.45);
+
+    background: var(--very-light-blue);
+}
+
+
+.filter-btn.active {
+    color: var(--white);
+
+    background: var(--dark-blue);
+
+    border-color: var(--dark-blue);
+
+    box-shadow:
+        0 7px 18px
+        rgba(7, 26, 53, 0.12);
+}
+
+
+/* =====================================================
+   APARTMENTS GRID
+===================================================== */
+
+.all-apartments-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 28px;
+
+    padding-bottom: 80px;
+}
+
+
+/* =====================================================
+   APARTMENT CARD
+===================================================== */
+
+.full-apartment-card {
+    position: relative;
+
+    overflow: hidden;
+
+    background: var(--white);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(7, 26, 53, 0.05);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+
+.full-apartment-card:hover {
+    transform: translateY(-7px);
+
+    border-color:
+        rgba(22, 135, 217, 0.25);
+
+    box-shadow:
+        0 25px 55px
+        rgba(7, 26, 53, 0.12);
+}
+
+
+/* =====================================================
+   APARTMENT IMAGE
+===================================================== */
+
+
+
+
+
+
+
+
+
+
+.full-apartment-image {
+    position: relative;
+
+    width: 100%;
+
+    height: 380px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: var(--very-light-blue);
+}
+
+
+/*
+    IMPORTANT:
+    Entire image stays visible.
+    No crop.
+    No zoom.
+*/
+
+.full-apartment-image img {
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    transform: none !important;
+
+    transition: none !important;
+}
+
+
+/* =====================================================
+   AVAILABILITY BADGE
+===================================================== */
+
+.availability-badge {
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+
+    z-index: 3;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding:
+        8px 12px;
+
+    border-radius: 50px;
+
+    color: #075E3B;
+
+    background: #D8F7E8;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 5px 15px
+        rgba(0, 0, 0, 0.08);
+}
+
+
+.availability-badge i {
+    font-size: 6px;
+}
+
+
+/* =====================================================
+   SPACE TAG
+===================================================== */
+
+.space-tag {
+    position: absolute;
+
+    left: 18px;
+    bottom: 18px;
+
+    z-index: 3;
+
+    padding:
+        8px 12px;
+
+    color: var(--dark-blue);
+
+    background:
+        rgba(255, 255, 255, 0.95);
+
+    border-radius: 6px;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    backdrop-filter: blur(8px);
+}
+
+
+/* =====================================================
+   POPULAR BADGE
+===================================================== */
+
+.popular-badge {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    z-index: 3;
+
+    padding:
+        8px 12px;
+
+    color: var(--white);
+
+    background: var(--blue);
+
+    border-radius: 50px;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.8px;
+
+    box-shadow:
+        0 7px 18px
+        rgba(22, 135, 217, 0.25);
+}
+
+
+/* =====================================================
+   APARTMENT CONTENT
+===================================================== */
+
+.full-apartment-content {
+    padding: 30px;
+}
+
+
+.apartment-heading {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+
+.apartment-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--blue);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.full-apartment-content h3 {
+    color: var(--dark-blue);
+
+    font-size: 22px;
+
+    line-height: 1.25;
+
+    letter-spacing: -0.5px;
+}
+
+
+.full-apartment-content > p {
+    margin-top: 14px;
+
+    color: var(--grey);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   PRICE
+===================================================== */
+
+.apartment-price {
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 3px;
+
+    white-space: nowrap;
+}
+
+
+.apartment-price small {
+    color: #98A2B3;
+
+    font-size: 9px;
+}
+
+
+.apartment-price strong {
+    color: var(--dark-blue);
+
+    font-size: 22px;
+
+    font-weight: 800;
+}
+
+
+.apartment-price span {
+    color: var(--grey);
+
+    font-size: 9px;
+}
+
+
+/* =====================================================
+   AMENITIES
+===================================================== */
+
+.amenities-row {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 22px;
+}
+
+
+.amenities-row span {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding:
+        8px 10px;
+
+    border:
+        1px solid #E5EEF4;
+
+    border-radius: 7px;
+
+    color: var(--grey);
+
+    background: var(--very-light-blue);
+
+    font-size: 9px;
+
+    font-weight: 600;
+}
+
+
+.amenities-row i {
+    color: var(--blue);
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   CARD ACTIONS
+===================================================== */
+
+.card-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid var(--light-grey);
+}
+
+
+.book-space-btn,
+.view-space-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    min-height: 45px;
+
+    padding:
+        0 17px;
+
+    border-radius: 8px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    transition: var(--transition);
+}
+
+
+.book-space-btn {
+    color: var(--white);
+
+    background: var(--dark-blue);
+}
+
+
+.book-space-btn:hover {
+    color: var(--white);
+
+    background: var(--blue);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 20px
+        rgba(22, 135, 217, 0.20);
+}
+
+
+.view-space-btn {
+    color: var(--dark-blue);
+
+    background: var(--very-light-blue);
+
+    border:
+        1px solid #DCEAF3;
+}
+
+
+.view-space-btn:hover {
+    color: var(--blue);
+
+    border-color: var(--blue);
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   FILTER HIDDEN
+===================================================== */
+
+.full-apartment-card.hidden {
+    display: none;
+}
+
+
+/* =====================================================
+   INCLUDED SECTION
+===================================================== */
+
+.included-section {
+    padding: 100px 0;
+
+    background: var(--very-light-blue);
+}
+
+
+.included-header {
+    max-width: 700px;
+
+    margin-bottom: 45px;
+}
+
+
+.included-header .section-label {
+    color: var(--blue);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.included-header h2 {
+    margin-top: 10px;
+
+    color: var(--dark-blue);
+
+    font-size:
+        clamp(35px, 4vw, 50px);
+
+    line-height: 1.1;
+
+    letter-spacing: -2px;
+}
+
+
+.included-header h2 span {
+    color: var(--blue);
+}
+
+
+.included-header p {
+    max-width: 500px;
+
+    margin-top: 15px;
+
+    color: var(--grey);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   INCLUDED GRID
+===================================================== */
+
+.included-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+
+.included-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    padding: 24px;
+
+    background: var(--white);
+
+    border:
+        1px solid #E1ECF3;
+
+    border-radius: 15px;
+
+    transition: var(--transition);
+}
+
+
+.included-item:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(22, 135, 217, 0.30);
+
+    box-shadow:
+        0 15px 35px
+        rgba(7, 26, 53, 0.07);
+}
+
+
+.included-item > i {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: grid;
+
+    place-items: center;
+
+    color: var(--blue);
+
+    background: var(--light-blue);
+
+    border-radius: 10px;
+
+    font-size: 15px;
+}
+
+
+.included-item h3 {
+    color: var(--dark-blue);
+
+    font-size: 13px;
+}
+
+
+.included-item p {
+    margin-top: 5px;
+
+    color: var(--grey);
+
+    font-size: 10px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   FINAL CTA
+===================================================== */
+
+.apartments-cta {
+    padding: 110px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--dark-blue),
+            #0B3158
+        );
+}
+
+
+.apartments-cta-content {
+    max-width: 760px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+
+.apartments-cta-content > span {
+    color: #8DD8FF;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.apartments-cta h2 {
+    margin-top: 13px;
+
+    color: var(--white);
+
+    font-size:
+        clamp(38px, 5vw, 62px);
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+}
+
+
+.apartments-cta h2 strong {
+    display: block;
+
+    color: #8DD8FF;
+
+    font-weight: 700;
+}
+
+
+.apartments-cta p {
+    max-width: 500px;
+
+    margin:
+        18px auto 0;
+
+    color:
+        rgba(255, 255, 255, 0.65);
+
+    font-size: 14px;
+}
+
+
+/* CTA buttons */
+
+.apartments-cta .cta-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+
+.cta-primary,
+.cta-whatsapp {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    min-height: 52px;
+
+    padding:
+        0 23px;
+
+    border-radius: 9px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition: var(--transition);
+}
+
+
+.cta-primary {
+    color: var(--dark-blue);
+
+    background: var(--white);
+}
+
+
+.cta-primary:hover {
+    color: var(--white);
+
+    background: var(--blue);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(22, 135, 217, 0.30);
+}
+
+
+.cta-whatsapp {
+    color: var(--white);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.25);
+
+    background:
+        rgba(255, 255, 255, 0.07);
+}
+
+
+.cta-whatsapp:hover {
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    transform: translateY(-3px);
+}
+
+
+.cta-whatsapp i {
+    font-size: 16px;
+}
+
+
+/* =====================================================
+   MOBILE HEADER
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .desktop-nav,
+    .nav-book-btn {
+        display: none;
+    }
+
+
+    .menu-toggle {
+        display: flex;
+    }
+
+
+    .mobile-nav {
+        display: flex;
+
+        flex-direction: column;
+
+        max-height: 0;
+
+        overflow: hidden;
+
+        padding:
+            0 5%;
+
+        background: var(--dark-blue);
+
+        transition:
+            max-height 0.4s ease,
+            padding 0.4s ease;
+    }
+
+
+    .mobile-nav.open {
+        max-height: 450px;
+
+        padding-top: 20px;
+
+        padding-bottom: 25px;
+    }
+
+
+    .mobile-nav > a {
+        padding: 14px 0;
+
+        color:
+            rgba(255, 255, 255, 0.80);
+
+        border-bottom:
+            1px solid
+            rgba(255, 255, 255, 0.08);
+
+        font-size: 14px;
+
+        transition: var(--transition);
+    }
+
+
+    .mobile-nav > a:hover {
+        color: var(--white);
+    }
+
+
+    .mobile-nav .mobile-book-btn {
+        margin-top: 15px;
+
+        padding:
+            14px 20px;
+
+        text-align: center;
+
+        border: 0;
+
+        border-radius: 8px;
+
+        color: var(--dark-blue);
+
+        background: var(--light-blue);
+    }
+
+
+    /* Apartments */
+
+    .apartments-intro .section-heading {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        align-items: start;
+    }
+
+
+    .all-apartments-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .included-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+    /* Header */
+
+    .nav-container {
+        height: 70px;
+    }
+
+
+    .logo img {
+        width: 50px;
+    }
+
+
+    /* Hero */
+
+    .apartments-hero {
+        min-height: 430px;
+    }
+
+
+    .apartments-hero-content {
+        padding-top: 70px;
+    }
+
+
+    .apartments-hero h1 {
+        font-size:
+            clamp(42px, 12vw, 58px);
+
+        letter-spacing: -2px;
+    }
+
+
+    .apartments-hero p {
+        font-size: 13px;
+    }
+
+
+    /* Intro */
+
+    .apartments-intro {
+        padding:
+            70px 0 25px;
+    }
+
+
+    .apartments-intro h2 {
+        font-size: 36px;
+    }
+
+
+    /* Filters */
+
+    .apartment-filters {
+        flex-wrap: nowrap;
+
+        overflow-x: auto;
+
+        padding-bottom: 10px;
+
+        scrollbar-width: none;
+    }
+
+
+    .apartment-filters::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    .filter-btn {
+        flex-shrink: 0;
+
+        white-space: nowrap;
+    }
+
+
+    /* Apartment cards */
+
+    .all-apartments-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        padding-bottom: 55px;
+    }
+
+
+    .full-apartment-image {
+        height: 280px;
+    }
+
+
+    .full-apartment-image img {
+        object-fit: contain;
+    }
+
+
+    .full-apartment-content {
+        padding: 22px;
+    }
+
+
+    .apartment-heading {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    .full-apartment-content h3 {
+        font-size: 20px;
+    }
+
+
+    .apartment-price {
+        align-self: flex-start;
+    }
+
+
+    /* Amenities */
+
+    .amenities-row {
+        gap: 6px;
+    }
+
+
+    .amenities-row span {
+        padding:
+            7px 8px;
+
+        font-size: 8px;
+    }
+
+
+    /* Card buttons */
+
+    .card-actions {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .book-space-btn,
+    .view-space-btn {
+        width: 100%;
+    }
+
+
+    /* Included */
+
+    .included-section {
+        padding: 75px 0;
+    }
+
+
+    .included-header h2 {
+        font-size: 36px;
+    }
+
+
+    .included-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* CTA */
+
+    .apartments-cta {
+        padding: 80px 0;
+    }
+
+
+    .apartments-cta h2 {
+        font-size: 43px;
+    }
+
+
+    .apartments-cta .cta-buttons {
+        flex-direction: column;
+    }
+
+
+    .cta-primary,
+    .cta-whatsapp {
+        width: 100%;
+    }
+
+}
+
+
+
+
+
+/* =====================================================
+   HOUSE WALKING SCENE
+===================================================== */
+
+.hero-house-scene {
+    position: absolute;
+
+    right: 0;
+    top: 50%;
+
+    width: 52%;
+    height: 390px;
+
+    transform: translateY(-42%);
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   HOUSE
+===================================================== */
+
+.animated-house {
+    position: absolute;
+
+    right: 7%;
+    bottom: 55px;
+
+    width: 310px;
+    height: 250px;
+}
+
+
+/* =====================================================
+   ROOF
+===================================================== */
+
+.house-roof {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left: 155px solid transparent;
+    border-right: 155px solid transparent;
+
+    border-bottom: 105px solid #1687D9;
+
+    filter:
+        drop-shadow(
+            0 0 18px
+            rgba(22, 135, 217, 0.20)
+        );
+}
+
+
+/* =====================================================
+   HOUSE WALL
+===================================================== */
+
+.house-wall {
+    position: absolute;
+
+    left: 38px;
+    bottom: 0;
+
+    width: 234px;
+    height: 165px;
+
+    background: rgba(221, 242, 255, 0.06);
+
+    border:
+        2px solid
+        rgba(141, 216, 255, 0.75);
+
+    border-top: 0;
+
+    border-radius: 2px;
+}
+
+
+/* =====================================================
+   WINDOWS
+===================================================== */
+
+.house-window {
+    position: absolute;
+
+    top: 35px;
+
+    width: 48px;
+    height: 48px;
+
+    border:
+        2px solid #8DD8FF;
+
+    background:
+        rgba(22, 135, 217, 0.12);
+}
+
+
+/* Window positions */
+
+.window-left {
+    left: 25px;
+}
+
+.window-right {
+    right: 25px;
+}
+
+
+/* Window cross */
+
+.house-window::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    width: 1px;
+    height: 100%;
+
+    background:
+        rgba(141, 216, 255, 0.7);
+}
+
+
+.house-window::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 50%;
+
+    width: 100%;
+    height: 1px;
+
+    background:
+        rgba(141, 216, 255, 0.7);
+}
+
+
+/* =====================================================
+   WINDOW LIGHT
+===================================================== */
+
+.house-window span {
+    position: absolute;
+
+    inset: 5px;
+
+    background:
+        rgba(141, 216, 255, 0.08);
+
+    animation:
+        windowGlow 4s ease-in-out infinite;
+}
+
+
+@keyframes windowGlow {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+}
+
+
+/* =====================================================
+   DOOR
+===================================================== */
+
+.house-door {
+    position: absolute;
+
+    bottom: 0;
+    left: 92px;
+
+    width: 52px;
+    height: 92px;
+
+    border:
+        2px solid #8DD8FF;
+
+    border-bottom: 0;
+
+    background:
+        rgba(7, 26, 53, 0.85);
+
+    transform-origin: left center;
+
+    animation:
+        doorOpen 5s ease-in-out infinite;
+}
+
+
+/* Door handle */
+
+.door-handle {
+    position: absolute;
+
+    right: 7px;
+    top: 48%;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #8DD8FF;
+}
+
+
+/* =====================================================
+   DOOR OPENING
+===================================================== */
+
+@keyframes doorOpen {
+
+    0%,
+    55% {
+        transform: rotateY(0deg);
+    }
+
+    65%,
+    82% {
+        transform: rotateY(-65deg);
+    }
+
+    90%,
+    100% {
+        transform: rotateY(0deg);
+    }
+
+}
+
+
+/* =====================================================
+   WALKING PERSON
+===================================================== */
+
+.walking-person {
+    position: absolute;
+
+    left: 5%;
+    bottom: 55px;
+
+    width: 44px;
+    height: 125px;
+
+    z-index: 5;
+
+    animation:
+        walkIntoHouse 5s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   PERSON HEAD
+===================================================== */
+
+.walking-person .person-head {
+    position: absolute;
+
+    top: 0;
+    left: 11px;
+
+    width: 21px;
+    height: 21px;
+
+    border:
+        2px solid #8DD8FF;
+
+    border-radius: 50%;
+
+    background: transparent;
+}
+
+
+/* =====================================================
+   PERSON BODY
+===================================================== */
+
+.walking-person .person-body {
+    position: absolute;
+
+    top: 27px;
+    left: 21px;
+
+    width: 2px;
+    height: 45px;
+
+    background: #8DD8FF;
+}
+
+
+/* =====================================================
+   ARMS
+===================================================== */
+
+.walking-person .person-arm {
+    position: absolute;
+
+    top: 29px;
+    left: 21px;
+
+    width: 2px;
+    height: 40px;
+
+    background: #8DD8FF;
+
+    transform-origin: top center;
+}
+
+
+.left-arm {
+    animation:
+        leftArm 0.7s ease-in-out infinite alternate;
+}
+
+
+.right-arm {
+    animation:
+        rightArm 0.7s ease-in-out infinite alternate;
+}
+
+
+/* =====================================================
+   LEGS
+===================================================== */
+
+.walking-person .person-leg {
+    position: absolute;
+
+    top: 69px;
+    left: 21px;
+
+    width: 2px;
+    height: 48px;
+
+    background: #8DD8FF;
+
+    transform-origin: top center;
+}
+
+
+.left-leg {
+    animation:
+        leftLeg 0.7s ease-in-out infinite alternate;
+}
+
+
+.right-leg {
+    animation:
+        rightLeg 0.7s ease-in-out infinite alternate;
+}
+
+
+/* =====================================================
+   PERSON WALKING INTO HOUSE
+===================================================== */
+
+@keyframes walkIntoHouse {
+
+    /* Start */
+
+    0% {
+        left: 2%;
+        opacity: 0;
+    }
+
+
+    /* Appears */
+
+    8% {
+        left: 5%;
+        opacity: 1;
+    }
+
+
+    /* Walking */
+
+    25% {
+        left: 20%;
+    }
+
+
+    45% {
+        left: 38%;
+    }
+
+
+    60% {
+        left: 53%;
+    }
+
+
+    /* Reaches door */
+
+    68% {
+        left: 63%;
+        opacity: 1;
+    }
+
+
+    /* Walks inside */
+
+    76% {
+        left: 69%;
+        opacity: 0;
+    }
+
+
+    /* Stay hidden */
+
+    82% {
+        left: 69%;
+        opacity: 0;
+    }
+
+
+    /* Reset */
+
+    100% {
+        left: 2%;
+        opacity: 0;
+    }
+
+}
+
+
+/* =====================================================
+   ARM WALK
+===================================================== */
+
+@keyframes leftArm {
+
+    from {
+        transform: rotate(30deg);
+    }
+
+    to {
+        transform: rotate(-30deg);
+    }
+
+}
+
+
+@keyframes rightArm {
+
+    from {
+        transform: rotate(-30deg);
+    }
+
+    to {
+        transform: rotate(30deg);
+    }
+
+}
+
+
+/* =====================================================
+   LEG WALK
+===================================================== */
+
+@keyframes leftLeg {
+
+    from {
+        transform: rotate(28deg);
+    }
+
+    to {
+        transform: rotate(-28deg);
+    }
+
+}
+
+
+@keyframes rightLeg {
+
+    from {
+        transform: rotate(-28deg);
+    }
+
+    to {
+        transform: rotate(28deg);
+    }
+
+}
+
+
+/* =====================================================
+   GROUND
+===================================================== */
+
+.scene-ground {
+    position: absolute;
+
+    left: 0;
+    bottom: 50px;
+
+    width: 100%;
+    height: 1px;
+
+    background:
+        rgba(141, 216, 255, 0.30);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+/* ==============================
+   COMPACT WHITE FOOTER
+================================= */
+
+.site-footer {
+    background: #ffffff;
+    color: #071a33;
+    padding: 25px 6% 0;
+    border-top: 1px solid #e8edf3;
+}
+
+
+/* ==============================
+   MAIN FOOTER
+================================= */
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1.1fr 1.5fr;
+
+    column-gap: 40px;
+    align-items: start;
+}
+
+
+/* ==============================
+   BRAND
+================================= */
+
+.footer-brand {
+    max-width: 270px;
+}
+
+.footer-brand img {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin-bottom: 7px;
+}
+
+.footer-brand p {
+    margin: 0;
+
+    color: #526174;
+    font-size: 11.5px;
+    line-height: 1.4;
+}
+
+
+/* ==============================
+   SOCIAL ICONS
+================================= */
+
+.footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 10px;
+}
+
+.footer-socials a {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #dbe3ec;
+    border-radius: 50%;
+
+    color: #071a33;
+    background: #ffffff;
+
+    text-decoration: none;
+    font-size: 12px;
+
+    transition: all 0.25s ease;
+}
+
+.footer-socials a:hover {
+    background: #3298e8;
+    border-color: #3298e8;
+    color: #ffffff;
+}
+
+
+/* ==============================
+   FOOTER COLUMNS
+================================= */
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-column h4 {
+    margin: 0 0 9px;
+
+    color: #071a33;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.footer-column > a {
+    margin-bottom: 5px;
+
+    color: #526174;
+
+    font-size: 11.5px;
+    line-height: 1.3;
+
+    text-decoration: none;
+
+    transition: color 0.25s ease;
+}
+
+.footer-column > a:hover {
+    color: #3298e8;
+}
+
+
+/* ==============================
+   CONTACT
+================================= */
+
+.footer-contact p {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+
+    margin: 0 0 6px;
+
+    color: #526174;
+
+    font-size: 11.5px;
+    line-height: 1.3;
+}
+
+.footer-contact p i {
+    width: 14px;
+    margin-top: 1px;
+
+    color: #3298e8;
+
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.footer-contact p a {
+    color: #526174;
+    text-decoration: none;
+
+    transition: color 0.25s ease;
+}
+
+.footer-contact p a:hover {
+    color: #3298e8;
+}
+
+
+/* ==============================
+   BOTTOM BAR
+================================= */
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 18px auto 0;
+
+    padding: 9px 0;
+
+    border-top: 1px solid #edf1f5;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.footer-bottom p {
+    margin: 0;
+
+    color: #7a8796;
+    font-size: 10px;
+}
+
+.footer-bottom > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    color: #071a33;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: color 0.25s ease;
+}
+
+.footer-bottom > a:hover {
+    color: #3298e8;
+}
+
+
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .hero-house-scene {
+        width: 100%;
+
+        right: -5%;
+
+        opacity: 0.75;
+
+        transform:
+            translateY(-35%)
+            scale(0.75);
+
+        transform-origin: right center;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .hero-house-scene {
+        right: -15%;
+
+        transform:
+            translateY(-25%)
+            scale(0.58);
+    }
+
+}
+
+
+
+
+/* =====================================================
+   SMOOTH HERO ANIMATIONS
+===================================================== */
+
+
+/* -----------------------------------------------------
+   HERO CONTENT — SOFT FADE + SLIDE UP
+----------------------------------------------------- */
+
+.apartments-hero-content {
+    animation: heroContentReveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes heroContentReveal {
+
+    0% {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* -----------------------------------------------------
+   EYEBROW — SLIGHT DELAY
+----------------------------------------------------- */
+
+.apartments-hero .hero-eyebrow {
+    animation:
+        heroEyebrowReveal 0.9s ease 0.15s both;
+}
+
+@keyframes heroEyebrowReveal {
+
+    0% {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* -----------------------------------------------------
+   HEADING — SMOOTH REVEAL
+----------------------------------------------------- */
+
+.apartments-hero h1 {
+    animation:
+        heroHeadingReveal 1s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both;
+}
+
+@keyframes heroHeadingReveal {
+
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+        filter: blur(5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+
+}
+
+
+/* -----------------------------------------------------
+   PARAGRAPH — FADES IN AFTER HEADING
+----------------------------------------------------- */
+
+.apartments-hero p {
+    animation:
+        heroParagraphReveal 1s ease 0.45s both;
+}
+
+@keyframes heroParagraphReveal {
+
+    0% {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* -----------------------------------------------------
+   BLUE BACKGROUND GLOW — SLOW MOVEMENT
+----------------------------------------------------- */
+
+.apartments-hero::before {
+    animation:
+        heroGlowMove 10s ease-in-out infinite alternate;
+}
+
+@keyframes heroGlowMove {
+
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(-25px, 20px) scale(1.05);
+    }
+
+    100% {
+        transform: translate(15px, -15px) scale(1.1);
+    }
+
+}
+
+
+/* -----------------------------------------------------
+   CIRCLE — VERY SLOW FLOAT
+----------------------------------------------------- */
+
+.apartments-hero .container::before {
+    animation:
+        heroCircleFloat 8s ease-in-out infinite;
+}
+
+@keyframes heroCircleFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+
+/* -----------------------------------------------------
+   SMALL BLUE DOT
+----------------------------------------------------- */
+
+.apartments-hero .container::after {
+    animation:
+        heroDotFloat 5s ease-in-out infinite;
+}
+
+@keyframes heroDotFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: translateY(-18px);
+        opacity: 1;
+    }
+
+}
+
+
+/* -----------------------------------------------------
+   LIGHT BLUE WAVE — VERY SUBTLE MOVEMENT
+----------------------------------------------------- */
+
+.apartments-hero::after {
+    animation:
+        heroWaveMove 9s ease-in-out infinite alternate;
+}
+
+@keyframes heroWaveMove {
+
+    0% {
+        transform: rotate(-2deg) translateX(0);
+    }
+
+    100% {
+        transform: rotate(-1deg) translateX(18px);
+    }
+
+}
+
+
+/* -----------------------------------------------------
+   REDUCED MOTION ACCESSIBILITY
+----------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .apartments-hero *,
+    .apartments-hero::before,
+    .apartments-hero::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+}
+
+
+
+
+
+/* =====================================================
+   FOOTER — COMPACT MOBILE LAYOUT
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    .site-footer {
+        padding: 25px 18px 0;
+    }
+
+    /* Main footer — 2 columns */
+    .footer-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 25px;
+        row-gap: 25px;
+        width: 100%;
+    }
+
+    /* Brand takes the full width */
+    .footer-brand {
+        grid-column: 1 / -1;
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .footer-brand img {
+        width: 100px;
+        margin: 0 auto 7px;
+    }
+
+    .footer-socials {
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    /* Footer columns stay side-by-side */
+    .footer-column {
+        width: 100%;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .footer-column h4 {
+        margin-bottom: 9px;
+    }
+
+    .footer-column > a {
+        margin-bottom: 5px;
+    }
+
+    /* Contact section */
+    .footer-contact {
+        width: 100%;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .footer-contact p {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: left;
+        gap: 7px;
+    }
+
+    .footer-contact p a,
+    .footer-contact p span {
+        word-break: break-word;
+        overflow-wrap: anywhere;
+    }
+
+    /* Bottom bar remains horizontal */
+    .footer-bottom {
+        width: 100%;
+        margin-top: 18px;
+        padding: 9px 0;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 10px;
+    }
+
+    .footer-bottom p {
+        font-size: 9px;
+        line-height: 1.3;
+    }
+
+    .footer-bottom > a {
+        font-size: 9px;
+        white-space: nowrap;
+    }
+}
+
+
+/* =====================================================
+   SMALL PHONES
+   ===================================================== */
+
+@media (max-width: 380px) {
+
+    .site-footer {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .footer-container {
+        column-gap: 18px;
+        row-gap: 22px;
+    }
+
+    .footer-brand img {
+        width: 90px;
+    }
+
+    .footer-socials {
+        gap: 6px;
+    }
+
+    .footer-socials a {
+        width: 26px;
+        height: 26px;
+        font-size: 11px;
+    }
+
+    .footer-column h4 {
+        font-size: 12px;
+    }
+
+    .footer-column > a,
+    .footer-contact p {
+        font-size: 10.5px;
+    }
+
+    .footer-bottom p,
+    .footer-bottom > a {
+        font-size: 8.5px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   SAFEEDGE MOBILE HEADER FIX
+========================================================= */
+
+/* Mobile hamburger button */
+.menu-toggle {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-left: auto;
+
+    padding: 0;
+
+    background: #ffffff;
+
+    border: 1px solid #E8EEF3;
+
+    border-radius: 8px;
+
+    color: #071A35;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    position: relative;
+
+    z-index: 1100;
+}
+
+
+/* =========================================================
+   MOBILE BREAKPOINT
+========================================================= */
+
+@media screen and (max-width: 800px) {
+
+    /* Header */
+    .site-header {
+        height: 70px;
+
+        position: sticky;
+        top: 0;
+
+        z-index: 1000;
+
+        background: rgba(255, 255, 255, 0.98);
+    }
+
+
+    /* Header container */
+    .nav-container {
+        width: 90%;
+        height: 70px;
+
+        margin: 0 auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+
+    /* Logo */
+    .logo {
+        display: flex;
+        align-items: center;
+
+        flex-shrink: 0;
+    }
+
+    .logo img {
+        width: 115px;
+        height: 48px;
+
+        object-fit: contain;
+    }
+
+
+    /* HIDE DESKTOP NAV */
+    .desktop-nav {
+        display: none !important;
+    }
+
+
+    /* HIDE DESKTOP BOOK BUTTON */
+    .nav-book-btn {
+        display: none !important;
+    }
+
+
+    /* SHOW HAMBURGER */
+    .menu-toggle {
+        display: flex !important;
+    }
+
+
+    /* =====================================================
+       MOBILE NAVIGATION
+    ===================================================== */
+
+    .mobile-nav {
+        position: absolute;
+
+        top: 70px;
+        left: 0;
+
+        width: 100%;
+
+        display: flex !important;
+        flex-direction: column;
+
+        padding: 10px 5% 20px;
+
+        background: #ffffff;
+
+        border-top: 1px solid #E8EEF3;
+        border-bottom: 1px solid #E8EEF3;
+
+        box-shadow:
+            0 15px 35px rgba(7, 26, 53, 0.10);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transform: translateY(-10px);
+
+        pointer-events: none;
+
+        transition:
+            opacity 0.25s ease,
+            transform 0.25s ease,
+            visibility 0.25s ease;
+
+        z-index: 999;
+    }
+
+
+    /* MENU OPEN */
+
+    .mobile-nav.open {
+        opacity: 1;
+
+        visibility: visible;
+
+        transform: translateY(0);
+
+        pointer-events: auto;
+    }
+
+
+    /* MOBILE LINKS */
+
+    .mobile-nav a {
+        display: flex;
+
+        align-items: center;
+
+        width: 100%;
+
+        min-height: 48px;
+
+        padding: 13px 5px;
+
+        color: #071A35;
+
+        background: transparent;
+
+        border-bottom: 1px solid #E8EEF3;
+
+        font-size: 15px;
+        font-weight: 600;
+
+        text-decoration: none;
+    }
+
+
+    .mobile-nav a:hover {
+        color: #1687D9;
+    }
+
+
+    /* BOOK BUTTON INSIDE MOBILE MENU */
+
+    .mobile-nav .mobile-book-btn {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 9px;
+
+        margin-top: 15px;
+
+        min-height: 46px;
+
+        padding: 12px 18px;
+
+        background: #1687D9;
+
+        color: #ffffff;
+
+        border: none;
+
+        border-radius: 7px;
+    }
+
+
+    .mobile-nav .mobile-book-btn:hover {
+        background: #071A35;
+
+        color: #ffffff;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media screen and (max-width: 480px) {
+
+    .site-header {
+        height: 66px;
+    }
+
+    .nav-container {
+        width: 92%;
+        height: 66px;
+    }
+
+    .logo img {
+        width: 105px;
+        height: 44px;
+    }
+
+    .menu-toggle {
+        display: flex !important;
+
+        width: 39px;
+        height: 39px;
+
+        font-size: 18px;
+    }
+
+    .mobile-nav {
+        top: 66px;
+    }
+}
+
+
+
+
+/* =====================================================
+   FLOATING FEEDBACK BUTTON
+===================================================== */
+
+.floating-feedback {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 13px 18px;
+
+    background: #1687D9;
+    color: #ffffff;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    box-shadow: 0 10px 30px rgba(7, 26, 53, 0.22);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Icon */
+
+.floating-feedback i {
+    font-size: 16px;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* Hover */
+
+.floating-feedback:hover {
+    background: #071A35;
+
+    color: #ffffff;
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 14px 35px rgba(7, 26, 53, 0.30);
+}
+
+
+.floating-feedback:hover i {
+    transform: rotate(-8deg) scale(1.1);
+}
+
+
+/* Small attention animation */
+
+.floating-feedback::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -4px;
+
+    border-radius: inherit;
+
+    border: 1px solid rgba(22, 135, 217, 0.35);
+
+    animation: feedbackPulse 2.5s infinite;
+
+    pointer-events: none;
+}
+
+
+@keyframes feedbackPulse {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.12);
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .floating-feedback {
+
+        right: 16px;
+        bottom: 18px;
+
+        width: 48px;
+        height: 48px;
+
+        padding: 0;
+
+        justify-content: center;
+
+        border-radius: 50%;
+    }
+
+
+    .floating-feedback span {
+        display: none;
+    }
+
+
+    .floating-feedback i {
+        font-size: 18px;
+    }
+
+}
