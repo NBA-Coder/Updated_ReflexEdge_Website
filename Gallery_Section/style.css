@@ -1,0 +1,940 @@
+
+/* =========================================
+   SAFEDGE GALLERY
+========================================= */
+
+:root {
+    --gallery-blue: #071a33;
+    --gallery-light-blue: #3298e8;
+    --gallery-pale-blue: #eef7ff;
+    --gallery-text: #526174;
+    --gallery-border: #e5ebf2;
+    --gallery-white: #ffffff;
+}
+
+
+
+
+
+/* =========================================
+   GALLERY HERO
+========================================= */
+
+
+
+
+
+
+.gallery-hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-hero::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        #ffffff 100%
+    );
+
+    pointer-events: none;
+}
+
+.gallery-hero {
+    min-height: 80vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 7%;
+
+    background-image:url(/Images/wd-toro-87bAL31e918-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.gallery-hero-content {
+    max-width: 700px;
+    animation: galleryHeroIn 0.9s ease forwards;
+}
+
+.gallery-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 18px;
+
+    color: var(--gallery-light-blue);
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+}
+
+.gallery-hero h1 {
+    margin: 0;
+
+    color:#333333;
+
+    font-size: clamp(42px, 6vw, 76px);
+    font-weight: 700;
+    line-height: 1.02;
+    letter-spacing: -2.5px;
+}
+
+.gallery-hero h1 span {
+    color: var(--gallery-light-blue);
+}
+
+.gallery-hero p {
+    max-width: 570px;
+
+    margin: 22px 0 0;
+
+    color:#333333;
+
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+
+
+
+
+/* SCROLL */
+
+.scroll-indicator {
+    position: absolute;
+
+    right: 5%;
+    bottom: 40px;
+
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color:var(--gallery-light-blue);
+
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+
+    writing-mode: vertical-rl;
+}
+
+.scroll-indicator i {
+    color: var(--blue);
+
+    animation: scrollBounce 1.8s infinite;
+}
+
+@keyframes scrollBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
+
+}
+
+
+
+
+
+
+
+/* =========================================
+   HERO ANIMATION
+========================================= */
+
+@keyframes galleryHeroIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   GALLERY SECTION
+========================================= */
+
+.gallery-section {
+    padding: 85px 7%;
+    background: #ffffff;
+}
+
+.gallery-container {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.gallery-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    gap: 40px;
+
+    margin-bottom: 35px;
+}
+
+.section-label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: var(--gallery-light-blue);
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+}
+
+.gallery-heading h2 {
+    margin: 0;
+
+    color: var(--gallery-blue);
+
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.1;
+    letter-spacing: -1.2px;
+}
+
+.gallery-heading h2 span {
+    color: var(--gallery-light-blue);
+}
+
+.gallery-heading > p {
+    max-width: 350px;
+
+    margin: 0;
+
+    color: var(--gallery-text);
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   FILTER BUTTONS
+========================================= */
+
+.gallery-filters {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 28px;
+}
+
+.filter-btn {
+    border: 1px solid var(--gallery-border);
+    background: #ffffff;
+
+    color: #526174;
+
+    padding: 9px 17px;
+
+    border-radius: 30px;
+
+    font-family: inherit;
+    font-size: 11.5px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--gallery-light-blue);
+    color: var(--gallery-light-blue);
+}
+
+.filter-btn.active {
+    background: var(--gallery-blue);
+    border-color: var(--gallery-blue);
+
+    color: #ffffff;
+}
+
+
+/* =========================================
+   GALLERY GRID
+========================================= */
+
+.gallery-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    grid-auto-rows: 260px;
+
+    gap: 14px;
+}
+
+
+/* =========================================
+   GALLERY ITEMS
+========================================= */
+
+.gallery-item {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    background: #f2f5f8;
+
+    cursor: pointer;
+}
+
+.gallery-item.gallery-large {
+    grid-row: span 2;
+}
+
+.gallery-item.gallery-wide {
+    grid-column: span 2;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.45s ease;
+}
+
+
+/* =========================================
+   IMAGE HOVER
+========================================= */
+
+.gallery-item:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================
+   OVERLAY
+========================================= */
+
+.gallery-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    padding: 22px;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(7, 26, 51, 0.82),
+            rgba(7, 26, 51, 0.12) 55%,
+            transparent
+        );
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-overlay span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #9ed5ff;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.gallery-overlay h3 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   VIEW BUTTON
+========================================= */
+
+.gallery-view {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.12);
+
+    color: #ffffff;
+
+    backdrop-filter: blur(5px);
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.gallery-view:hover {
+    background: #ffffff;
+    color: var(--gallery-blue);
+}
+
+
+/* =========================================
+   LIGHTBOX
+========================================= */
+
+.gallery-lightbox {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+
+    background: rgba(3, 12, 25, 0.96);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.3s ease,
+                visibility 0.3s ease;
+}
+
+.gallery-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =========================================
+   LIGHTBOX CONTENT
+========================================= */
+
+.lightbox-content {
+    max-width: 1100px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 78vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 6px;
+
+    box-shadow: 0 20px 70px rgba(0,0,0,0.4);
+}
+
+.lightbox-caption {
+    width: 100%;
+
+    margin-top: 15px;
+
+    text-align: center;
+}
+
+.lightbox-caption span {
+    color: #8bcfff;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.lightbox-caption h3 {
+    margin: 5px 0 0;
+
+    color: #ffffff;
+
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+/* =========================================
+   LIGHTBOX BUTTONS
+========================================= */
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.08);
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: #ffffff;
+    color: var(--gallery-blue);
+}
+
+.lightbox-close {
+    top: 25px;
+    right: 25px;
+}
+
+.lightbox-prev {
+    left: 25px;
+}
+
+.lightbox-next {
+    right: 25px;
+}
+
+
+/* =========================================
+   GALLERY CTA
+========================================= */
+
+.gallery-cta {
+    padding: 70px 7%;
+
+    background: var(--gallery-blue);
+
+    text-align: center;
+}
+
+.gallery-cta-content {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.gallery-cta span {
+    color: #8bcfff;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+}
+
+.gallery-cta h2 {
+    margin: 10px 0;
+
+    color: #ffffff;
+
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.1;
+}
+
+.gallery-cta p {
+    max-width: 500px;
+
+    margin: 0 auto 25px;
+
+    color: rgba(255,255,255,0.72);
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.gallery-cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 12px 20px;
+
+    border-radius: 5px;
+
+    background: #ffffff;
+
+    color: var(--gallery-blue);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: all 0.25s ease;
+}
+
+.gallery-cta-button:hover {
+    background: var(--gallery-light-blue);
+    color: #ffffff;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .gallery-hero {
+        min-height: 380px;
+        padding: 70px 6%;
+    }
+
+    .gallery-section {
+        padding: 65px 6%;
+    }
+
+    .gallery-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 240px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .gallery-hero {
+        min-height: 330px;
+        padding: 60px 7%;
+    }
+
+    .gallery-hero h1 {
+        font-size: 43px;
+        letter-spacing: -1.5px;
+    }
+
+    .gallery-hero p {
+        margin-top: 17px;
+        font-size: 13px;
+    }
+
+
+    .gallery-section {
+        padding: 50px 6%;
+    }
+
+    .gallery-heading {
+        margin-bottom: 25px;
+    }
+
+    .gallery-heading h2 {
+        font-size: 31px;
+    }
+
+
+    .gallery-filters {
+        gap: 6px;
+        margin-bottom: 20px;
+
+        overflow-x: auto;
+        flex-wrap: nowrap;
+
+        padding-bottom: 5px;
+    }
+
+    .filter-btn {
+        flex-shrink: 0;
+        padding: 8px 13px;
+        font-size: 10.5px;
+    }
+
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 250px;
+
+        gap: 10px;
+    }
+
+    .gallery-item.gallery-large,
+    .gallery-item.gallery-wide {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+
+    .gallery-overlay {
+        opacity: 1;
+        padding: 16px;
+
+        background:
+            linear-gradient(
+                to top,
+                rgba(7, 26, 51, 0.8),
+                transparent 65%
+            );
+    }
+
+    .gallery-overlay h3 {
+        font-size: 14px;
+    }
+
+    .gallery-view {
+        width: 35px;
+        height: 35px;
+        font-size: 11px;
+    }
+
+
+    .gallery-lightbox {
+        padding: 20px;
+    }
+
+    .lightbox-content img {
+        max-height: 70vh;
+        border-radius: 4px;
+    }
+
+    .lightbox-close {
+        top: 15px;
+        right: 15px;
+    }
+
+    .lightbox-prev {
+        left: 10px;
+    }
+
+    .lightbox-next {
+        right: 10px;
+    }
+
+    .lightbox-close,
+    .lightbox-prev,
+    .lightbox-next {
+        width: 38px;
+        height: 38px;
+    }
+
+
+    .gallery-cta {
+        padding: 55px 7%;
+    }
+
+}
+
+
+
+/* =====================================================
+   FLOATING FEEDBACK BUTTON
+===================================================== */
+
+.floating-feedback {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 13px 18px;
+
+    background: #1687D9;
+    color: #ffffff;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    box-shadow: 0 10px 30px rgba(7, 26, 53, 0.22);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Icon */
+
+.floating-feedback i {
+    font-size: 16px;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* Hover */
+
+.floating-feedback:hover {
+    background: #071A35;
+
+    color: #ffffff;
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 14px 35px rgba(7, 26, 53, 0.30);
+}
+
+
+.floating-feedback:hover i {
+    transform: rotate(-8deg) scale(1.1);
+}
+
+
+/* Small attention animation */
+
+.floating-feedback::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -4px;
+
+    border-radius: inherit;
+
+    border: 1px solid rgba(22, 135, 217, 0.35);
+
+    animation: feedbackPulse 2.5s infinite;
+
+    pointer-events: none;
+}
+
+
+@keyframes feedbackPulse {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.12);
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .floating-feedback {
+
+        right: 16px;
+        bottom: 18px;
+
+        width: 48px;
+        height: 48px;
+
+        padding: 0;
+
+        justify-content: center;
+
+        border-radius: 50%;
+    }
+
+
+    .floating-feedback span {
+        display: none;
+    }
+
+
+    .floating-feedback i {
+        font-size: 18px;
+    }
+
+}
